@@ -1,0 +1,252 @@
+riyanka@priyanka-everexpanse:~/node-course$ cd web-server/
+priyanka@priyanka-everexpanse:~/node-course/web-server$ git remote add origin https://github.com/priya12891/web-server.git
+fatal: remote origin already exists.
+priyanka@priyanka-everexpanse:~/node-course/web-server$ git branch -M main
+priyanka@priyanka-everexpanse:~/node-course/web-server$ git push -u origin main
+Enumerating objects: 1442, done.
+Counting objects: 100% (1442/1442), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (1387/1387), done.
+Writing objects: 100% (1442/1442), 2.71 MiB | 1.18 MiB/s, done.
+Total 1442 (delta 222), reused 0 (delta 0)
+remote: Resolving deltas: 100% (222/222), done.
+To https://github.com/priya12891/web-server.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+priyanka@priyanka-everexpanse:~/node-course/web-server$ heroku keys:add
+ ›   Warning: heroku update available from 7.49.0 to 7.50.0.
+Found an SSH public key at /home/priyanka/.ssh/id_rsa.pub
+? Would you like to upload it to Heroku? Yes
+Uploading /home/priyanka/.ssh/id_rsa.pub SSH key... done
+priyanka@priyanka-everexpanse:~/node-course/web-server$ heroku create mead-weather-application
+ ›   Warning: heroku update available from 7.49.0 to 7.50.0.
+Creating ⬢ mead-weather-application... !
+ ▸    Name mead-weather-application is already taken
+priyanka@priyanka-everexpanse:~/node-course/web-server$ heroku create ever-weather-application
+ ›   Warning: heroku update available from 7.49.0 to 7.50.0.
+Creating ⬢ ever-weather-application... done
+https://ever-weather-application.herokuapp.com/ | https://git.heroku.com/ever-weather-application.git
+priyanka@priyanka-everexpanse:~/node-course/web-server$ npm run start
+
+> web-server@1.0.0 start /home/priyanka/node-course/web-server
+> node src/app.js
+
+/home/priyanka/node-course/web-server/src
+/home/priyanka/node-course/web-server/src
+Server is up on port 3000!!!
+^C
+priyanka@priyanka-everexpanse:~/node-course/web-server$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   package.json
+        modified:   public/js/app.js
+        modified:   src/app.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+priyanka@priyanka-everexpanse:~/node-course/web-server$ git add .
+priyanka@priyanka-everexpanse:~/node-course/web-server$ git commit -m "addig files to heroku"
+[main fe29264] addig files to heroku
+ 3 files changed, 5 insertions(+), 4 deletions(-)
+priyanka@priyanka-everexpanse:~/node-course/web-server$ git push
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (8/8), 747 bytes | 747.00 KiB/s, done.
+Total 8 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To https://github.com/priya12891/web-server.git
+   ad1787a..fe29264  main -> main
+priyanka@priyanka-everexpanse:~/node-course/web-server$ git push
+Everything up-to-date
+priyanka@priyanka-everexpanse:~/node-course/web-server$ git remote
+heroku
+origin
+priyanka@priyanka-everexpanse:~/node-course/web-server$ git push heroku master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://git.heroku.com/ever-weather-application.git'
+priyanka@priyanka-everexpanse:~/node-course/web-server$ git push heroku master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://git.heroku.com/ever-weather-application.git'
+priyanka@priyanka-everexpanse:~/node-course/web-server$ git remote
+heroku
+origin
+priyanka@priyanka-everexpanse:~/node-course/web-server$ git push heroku master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://git.heroku.com/ever-weather-application.git'
+priyanka@priyanka-everexpanse:~/node-course/web-server$ git push heroku
+Enumerating objects: 1450, done.
+Counting objects: 100% (1450/1450), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (1394/1394), done.
+Writing objects: 100% (1450/1450), 2.71 MiB | 1.18 MiB/s, done.
+Total 1450 (delta 226), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Building on the Heroku-20 stack
+remote: -----> Determining which buildpack to use for this app
+remote: -----> Node.js app detected
+remote:        
+remote: -----> Creating runtime environment
+remote:        
+remote:        NPM_CONFIG_LOGLEVEL=error
+remote:        NODE_VERBOSE=false
+remote:        NODE_ENV=production
+remote:        NODE_MODULES_CACHE=true
+remote:        
+remote: -----> Installing binaries
+remote:        engines.node (package.json):  unspecified
+remote:        engines.npm (package.json):   unspecified (use default)
+remote:        
+remote:        Resolving node version 14.x...
+remote:        Downloading and installing node 14.16.0...
+remote:        Using default npm version: 6.14.11
+remote:        
+remote: -----> Installing dependencies
+remote:        Prebuild detected (node_modules already exists)
+remote:        Rebuilding any native modules
+remote:        express@4.17.1 /tmp/build_1c6aaadd/node_modules/express
+remote:        accepts@1.3.7 /tmp/build_1c6aaadd/node_modules/accepts
+remote:        mime-types@2.1.29 /tmp/build_1c6aaadd/node_modules/mime-types
+remote:        mime-db@1.46.0 /tmp/build_1c6aaadd/node_modules/mime-db
+remote:        negotiator@0.6.2 /tmp/build_1c6aaadd/node_modules/negotiator
+remote:        array-flatten@1.1.1 /tmp/build_1c6aaadd/node_modules/array-flatten
+remote:        body-parser@1.19.0 /tmp/build_1c6aaadd/node_modules/body-parser
+remote:        bytes@3.1.0 /tmp/build_1c6aaadd/node_modules/bytes
+remote:        content-type@1.0.4 /tmp/build_1c6aaadd/node_modules/content-type
+remote:        debug@2.6.9 /tmp/build_1c6aaadd/node_modules/debug
+remote:        ms@2.0.0 /tmp/build_1c6aaadd/node_modules/ms
+remote:        depd@1.1.2 /tmp/build_1c6aaadd/node_modules/depd
+remote:        http-errors@1.7.2 /tmp/build_1c6aaadd/node_modules/http-errors
+remote:        inherits@2.0.3 /tmp/build_1c6aaadd/node_modules/inherits
+remote:        setprototypeof@1.1.1 /tmp/build_1c6aaadd/node_modules/setprototypeof
+remote:        statuses@1.5.0 /tmp/build_1c6aaadd/node_modules/statuses
+remote:        toidentifier@1.0.0 /tmp/build_1c6aaadd/node_modules/toidentifier
+remote:        iconv-lite@0.4.24 /tmp/build_1c6aaadd/node_modules/iconv-lite
+remote:        safer-buffer@2.1.2 /tmp/build_1c6aaadd/node_modules/safer-buffer
+remote:        on-finished@2.3.0 /tmp/build_1c6aaadd/node_modules/on-finished
+remote:        ee-first@1.1.1 /tmp/build_1c6aaadd/node_modules/ee-first
+remote:        qs@6.7.0 /tmp/build_1c6aaadd/node_modules/qs
+remote:        raw-body@2.4.0 /tmp/build_1c6aaadd/node_modules/raw-body
+remote:        unpipe@1.0.0 /tmp/build_1c6aaadd/node_modules/unpipe
+remote:        type-is@1.6.18 /tmp/build_1c6aaadd/node_modules/type-is
+remote:        media-typer@0.3.0 /tmp/build_1c6aaadd/node_modules/media-typer
+remote:        content-disposition@0.5.3 /tmp/build_1c6aaadd/node_modules/content-disposition
+remote:        safe-buffer@5.1.2 /tmp/build_1c6aaadd/node_modules/safe-buffer
+remote:        cookie@0.4.0 /tmp/build_1c6aaadd/node_modules/cookie
+remote:        cookie-signature@1.0.6 /tmp/build_1c6aaadd/node_modules/cookie-signature
+remote:        encodeurl@1.0.2 /tmp/build_1c6aaadd/node_modules/encodeurl
+remote:        escape-html@1.0.3 /tmp/build_1c6aaadd/node_modules/escape-html
+remote:        etag@1.8.1 /tmp/build_1c6aaadd/node_modules/etag
+remote:        finalhandler@1.1.2 /tmp/build_1c6aaadd/node_modules/finalhandler
+remote:        parseurl@1.3.3 /tmp/build_1c6aaadd/node_modules/parseurl
+remote:        fresh@0.5.2 /tmp/build_1c6aaadd/node_modules/fresh
+remote:        merge-descriptors@1.0.1 /tmp/build_1c6aaadd/node_modules/merge-descriptors
+remote:        methods@1.1.2 /tmp/build_1c6aaadd/node_modules/methods
+remote:        path-to-regexp@0.1.7 /tmp/build_1c6aaadd/node_modules/path-to-regexp
+remote:        proxy-addr@2.0.6 /tmp/build_1c6aaadd/node_modules/proxy-addr
+remote:        forwarded@0.1.2 /tmp/build_1c6aaadd/node_modules/forwarded
+remote:        ipaddr.js@1.9.1 /tmp/build_1c6aaadd/node_modules/ipaddr.js
+remote:        range-parser@1.2.1 /tmp/build_1c6aaadd/node_modules/range-parser
+remote:        send@0.17.1 /tmp/build_1c6aaadd/node_modules/send
+remote:        destroy@1.0.4 /tmp/build_1c6aaadd/node_modules/destroy
+remote:        mime@1.6.0 /tmp/build_1c6aaadd/node_modules/mime
+remote:        ms@2.1.1 /tmp/build_1c6aaadd/node_modules/send/node_modules/ms
+remote:        serve-static@1.14.1 /tmp/build_1c6aaadd/node_modules/serve-static
+remote:        utils-merge@1.0.1 /tmp/build_1c6aaadd/node_modules/utils-merge
+remote:        vary@1.1.2 /tmp/build_1c6aaadd/node_modules/vary
+remote:        hbs@4.1.1 /tmp/build_1c6aaadd/node_modules/hbs
+remote:        handlebars@4.7.6 /tmp/build_1c6aaadd/node_modules/handlebars
+remote:        minimist@1.2.5 /tmp/build_1c6aaadd/node_modules/minimist
+remote:        neo-async@2.6.2 /tmp/build_1c6aaadd/node_modules/neo-async
+remote:        source-map@0.6.1 /tmp/build_1c6aaadd/node_modules/source-map
+remote:        wordwrap@1.0.0 /tmp/build_1c6aaadd/node_modules/wordwrap
+remote:        walk@2.3.14 /tmp/build_1c6aaadd/node_modules/walk
+remote:        foreachasync@3.0.0 /tmp/build_1c6aaadd/node_modules/foreachasync
+remote:        request@2.88.2 /tmp/build_1c6aaadd/node_modules/request
+remote:        aws-sign2@0.7.0 /tmp/build_1c6aaadd/node_modules/aws-sign2
+remote:        aws4@1.11.0 /tmp/build_1c6aaadd/node_modules/aws4
+remote:        caseless@0.12.0 /tmp/build_1c6aaadd/node_modules/caseless
+remote:        combined-stream@1.0.8 /tmp/build_1c6aaadd/node_modules/combined-stream
+remote:        delayed-stream@1.0.0 /tmp/build_1c6aaadd/node_modules/delayed-stream
+remote:        extend@3.0.2 /tmp/build_1c6aaadd/node_modules/extend
+remote:        forever-agent@0.6.1 /tmp/build_1c6aaadd/node_modules/forever-agent
+remote:        form-data@2.3.3 /tmp/build_1c6aaadd/node_modules/form-data
+remote:        asynckit@0.4.0 /tmp/build_1c6aaadd/node_modules/asynckit
+remote:        har-validator@5.1.5 /tmp/build_1c6aaadd/node_modules/har-validator
+remote:        ajv@6.12.6 /tmp/build_1c6aaadd/node_modules/ajv
+remote:        fast-deep-equal@3.1.3 /tmp/build_1c6aaadd/node_modules/fast-deep-equal
+remote:        fast-json-stable-stringify@2.1.0 /tmp/build_1c6aaadd/node_modules/fast-json-stable-stringify
+remote:        json-schema-traverse@0.4.1 /tmp/build_1c6aaadd/node_modules/json-schema-traverse
+remote:        uri-js@4.4.1 /tmp/build_1c6aaadd/node_modules/uri-js
+remote:        punycode@2.1.1 /tmp/build_1c6aaadd/node_modules/punycode
+remote:        har-schema@2.0.0 /tmp/build_1c6aaadd/node_modules/har-schema
+remote:        http-signature@1.2.0 /tmp/build_1c6aaadd/node_modules/http-signature
+remote:        assert-plus@1.0.0 /tmp/build_1c6aaadd/node_modules/assert-plus
+remote:        jsprim@1.4.1 /tmp/build_1c6aaadd/node_modules/jsprim
+remote:        extsprintf@1.3.0 /tmp/build_1c6aaadd/node_modules/extsprintf
+remote:        json-schema@0.2.3 /tmp/build_1c6aaadd/node_modules/json-schema
+remote:        verror@1.10.0 /tmp/build_1c6aaadd/node_modules/verror
+remote:        core-util-is@1.0.2 /tmp/build_1c6aaadd/node_modules/core-util-is
+remote:        sshpk@1.16.1 /tmp/build_1c6aaadd/node_modules/sshpk
+remote:        asn1@0.2.4 /tmp/build_1c6aaadd/node_modules/asn1
+remote:        bcrypt-pbkdf@1.0.2 /tmp/build_1c6aaadd/node_modules/bcrypt-pbkdf
+remote:        tweetnacl@0.14.5 /tmp/build_1c6aaadd/node_modules/tweetnacl
+remote:        dashdash@1.14.1 /tmp/build_1c6aaadd/node_modules/dashdash
+remote:        ecc-jsbn@0.1.2 /tmp/build_1c6aaadd/node_modules/ecc-jsbn
+remote:        jsbn@0.1.1 /tmp/build_1c6aaadd/node_modules/jsbn
+remote:        getpass@0.1.7 /tmp/build_1c6aaadd/node_modules/getpass
+remote:        is-typedarray@1.0.0 /tmp/build_1c6aaadd/node_modules/is-typedarray
+remote:        isstream@0.1.2 /tmp/build_1c6aaadd/node_modules/isstream
+remote:        json-stringify-safe@5.0.1 /tmp/build_1c6aaadd/node_modules/json-stringify-safe
+remote:        oauth-sign@0.9.0 /tmp/build_1c6aaadd/node_modules/oauth-sign
+remote:        performance-now@2.1.0 /tmp/build_1c6aaadd/node_modules/performance-now
+remote:        qs@6.5.2 /tmp/build_1c6aaadd/node_modules/request/node_modules/qs
+remote:        tough-cookie@2.5.0 /tmp/build_1c6aaadd/node_modules/tough-cookie
+remote:        psl@1.8.0 /tmp/build_1c6aaadd/node_modules/psl
+remote:        tunnel-agent@0.6.0 /tmp/build_1c6aaadd/node_modules/tunnel-agent
+remote:        uuid@3.4.0 /tmp/build_1c6aaadd/node_modules/uuid
+remote:        uglify-js@3.13.1 /tmp/build_1c6aaadd/node_modules/uglify-js
+remote:        Installing any new modules (package.json)
+remote:        audited 102 packages in 1.1s
+remote:        
+remote:        1 package is looking for funding
+remote:          run `npm fund` for details
+remote:        
+remote:        found 0 vulnerabilities
+remote:        
+remote:        
+remote: -----> Build
+remote:        
+remote: -----> Caching build
+remote:        - node_modules
+remote:        
+remote: -----> Pruning devDependencies
+remote:        audited 102 packages in 1.068s
+remote:        
+remote:        1 package is looking for funding
+remote:          run `npm fund` for details
+remote:        
+remote:        found 0 vulnerabilities
+remote:        
+remote:        
+remote: -----> Build succeeded!
+remote: -----> Discovering process types
+remote:        Procfile declares types     -> (none)
+remote:        Default types for buildpack -> web
+remote: 
+remote: -----> Compressing...
+remote:        Done: 34.8M
+remote: -----> Launching...
+remote:        Released v3
+remote:        https://ever-weather-application.herokuapp.com/ deployed to Heroku
+remote: 
+remote: Verifying deploy... done.
+To https://git.heroku.com/ever-weather-application.git
+ * [new branch]      main -> main
+priyanka@priyanka-everexpanse:~/node-course/web-server$ 
